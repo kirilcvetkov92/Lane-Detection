@@ -31,7 +31,8 @@ The goals / steps of this project are the following:
     * Applying Canny transform for edge detection
 - Extracting Mask from region of interest, the region that will contain the lane lines
 - Applying Hough transformation on the extracted mask in order to get all the candidate lines contained in the region of interest
-    * Line noise removal 
+    * Line noise removal
+    
 	    After applying hough transform, we obtain the lines formed from the edges.\
 	    A line `y=mx+b` is represented as (m,b), where `m` is the slope and `b` is the intercept.
 	    <p align="center">
@@ -40,12 +41,21 @@ The goals / steps of this project are the following:
 
         As we can see from the picture if we plot all the candidate lines as a points in 2d Axis,
 	    there may be a noise points, simplified we can consider them as a points that are not representing the lane lines
-	    which means their slope and intercept differs a far away from the mean.\
-        Below is the proposed formula for calculating the outliers:\
+	    which means their slope and intercept differs a lot and are far away from the mean.\
+        Below is the proposed condition for outlier detection:
 	 <p align="center">
  		<img width="25%" height="25%" alt="formula" src="./results/formula.png">
 	 </p>
+		
+		`m` : prameter that tells how much we scale from standard deviation
 
+		`μ` : calculated mean for dataset attribute (slope, intercept)
+
+		`X` : observed attribute sample (slope, intercept)
+
+		`σ` : standard deviation for dataset attribute (slope, intercept)
+	
+	
     * Adding the new lines inside the frame buffer
         Once we cleaned the noise lines from the candidate lines, we should see how much they fit
 	    with all the previous lines which were inserted in the past,\ inside the buffer.\
