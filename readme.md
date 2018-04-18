@@ -14,8 +14,8 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 
 [flow]: ./results/flow.jpg "Flow"
-[formula]: ./results/formula.jpg "Formula"
-[hough]:  ./results/hough.jpg "hough transform"
+[formula]: ./results/formula.png "Formula"
+[hough]:  ./results/hough.png "hough transform"
 
 ---
 
