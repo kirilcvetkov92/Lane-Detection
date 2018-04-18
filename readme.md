@@ -31,17 +31,31 @@ The goals / steps of this project are the following:
     * Applying Canny transform for edge detection
 - Extracting Mask from region of interest, the region that will contain the lane lines
 - Applying Hough transformation on the extracted mask in order to get all the candidate lines contained in the region of interest
-    * Line noise removal 
+    * Line noise removal
+    
 	    After applying hough transform, we obtain the lines formed from the edges.\
-	    A line `y=mx+b` is represented as (m,b), where `m` is the slope and `b` is the intercept.\
-		![Hough space and outliers][hough]
+	    A line `y=mx+b` is represented as (m,b), where `m` is the slope and `b` is the intercept.
+	    <p align="center">
+		<img width="25%" height="25%" alt="hough space and outliers" src="./results/hough.png">
+	    </p>
 
         As we can see from the picture if we plot all the candidate lines as a points in 2d Axis,
 	    there may be a noise points, simplified we can consider them as a points that are not representing the lane lines
-	    which means their slope and intercept differs a far away from the mean.\
-        Below is the proposed formula for calculating the outliers:
- 		![Formula][formula]
+	    which means their slope and intercept differs a lot and are far away from the mean.\
+        Below is the proposed condition for outlier detection:
+	 <p align="center">
+ 		<img width="25%" height="25%" alt="formula" src="./results/formula.png">
+	 </p>
+		
+		`m` : prameter that tells how much we scale from standard deviation
 
+		`μ` : calculated mean for dataset attribute (slope, intercept)
+
+		`X` : observed attribute sample (slope, intercept)
+
+		`σ` : standard deviation for dataset attribute (slope, intercept)
+	
+	
     * Adding the new lines inside the frame buffer
         Once we cleaned the noise lines from the candidate lines, we should see how much they fit
 	    with all the previous lines which were inserted in the past,\ inside the buffer.\
@@ -68,16 +82,17 @@ This pipeline is not robust to the following conditions :
 * Drastic changes in the lanes direction, if we are driving around twisty roads, this system won't be capable\
   to detect the lines, since we are using averages from the past frames,and also the drastic changes will be considered\
   as an outliers(noise)
-
+  
 ### 3. Possible improvements to your pipeline
 
-* A possible improvement would using of non-linear models that can learn how one lane is represented in the road, considering not only the edges, but many features as well.\
-I think that Neural networks, especially Convolutional Neural Networks can be trained to get all\
-the regions(anchors) representing the lanes, so we can draw spline between the anchors, with using spline interpolations or similar numeric methods.\
+* We can obtain some slight improvements if we use Linear regression or Nearest Neighbour heuristic, and detecting the point that(line) has the most neighbours, but it won't solve the problems above.
+* A possible solution would be the using of non-linear models that can learn how one lane is represented in the road, considering not only the edges, but many features as well.\
+I think that Neural networks, especially Convolutional Neural Networks can be trained to get all
+the regions(anchors) representing the lanes, so we can draw spline between the anchors, with using spline interpolations or similar numeric methods.
 * I think that this model will solve the shortcomings mentioned before, potential improvement is that we can train the model
   with data generated from different conditions with different type of noise,\
   so our system can be more robust and if properly trained, it can adapt to all drastic changes that can happen.
 
 
 
-Example videos : 
+
