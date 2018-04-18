@@ -13,10 +13,9 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/grayscale.jpg "Grayscale"
-[image2]: ./results/flow.jpg "Flow"
-[image3]: ./results/formula.jpg "Formula"
-[hough]: ./results/hough.jpg "Formula"
+[flow]: ./results/flow.jpg "Flow"
+[formula]: ./results/formula.jpg "Formula"
+[hough]:  ./results/hough.jpg "hough transform"
 
 ---
 
@@ -35,14 +34,13 @@ The goals / steps of this project are the following:
     * Line noise removal 
 	    After applying hough transform, we obtain the lines formed from the edges.\
 	    A line `y=mx+b` is represented as (m,b), where `m` is the slope and `b` is the intercept.\
-
-	   	![Hough space and outliers][image2]
+		![Hough space and outliers][hough]
 
         As we can see from the picture if we plot all the candidate lines as a points in 2d Axis,
 	    there may be a noise points, simplified we can consider them as a points that are not representing the lane lines
 	    which means their slope and intercept differs a far away from the mean.\
         Below is the proposed formula for calculating the outliers:
- 		![Pipeline flow][image3]
+ 		![Formula][formula]
 
     * Adding the new lines inside the frame buffer
         Once we cleaned the noise lines from the candidate lines, we should see how much they fit
@@ -58,7 +56,7 @@ The goals / steps of this project are the following:
 
 You can see the image below, describing how the pipeline works, containing activity flow diagram
 
-![Pipeline flow][image2]
+![Pipeline flow][flow]
 
 
 ### 2. Potential shortcomings with your current pipeline
