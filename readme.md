@@ -14,7 +14,9 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 
 [image1]: ./examples/grayscale.jpg "Grayscale"
-[image2]: ./examples/flow.jpg "Flow"
+[image2]: ./results/flow.jpg "Flow"
+[image3]: ./results/formula.jpg "Formula"
+[hough]: ./results/hough.jpg "Formula"
 
 ---
 
@@ -33,10 +35,15 @@ The goals / steps of this project are the following:
     * Line noise removal 
 	    After applying hough transform, we obtain the lines formed from the edges.\
 	    A line `y=mx+b` is represented as (m,b), where `m` is the slope and `b` is the intercept.\
-        As we can see from the `Pic.1`, if we plot all the candidate lines as a points in 2d Axis,\
-	    there may be a noise points, simplified we can consider them as a points that are not representing the lane lines\
+
+	   	![Hough space and outliers][image2]
+
+        As we can see from the picture if we plot all the candidate lines as a points in 2d Axis,
+	    there may be a noise points, simplified we can consider them as a points that are not representing the lane lines
 	    which means their slope and intercept differs a far away from the mean.\
-        Below is the proposed formula for calculating the outliers.
+        Below is the proposed formula for calculating the outliers:
+ 		![Pipeline flow][image3]
+
     * Adding the new lines inside the frame buffer
         Once we cleaned the noise lines from the candidate lines, we should see how much they fit
 	    with all the previous lines which were inserted in the past,\ inside the buffer.\
@@ -68,8 +75,11 @@ This pipeline is not robust to the following conditions :
 
 * A possible improvement would using of non-linear models that can learn how one lane is represented in the road, considering not only the edges, but many features as well.\
 I think that Neural networks, especially Convolutional Neural Networks can be trained to get all\
-the regions(anchors) representing the lanes, so we can\
-draw spline between the anchors, with using spline interpolations or similar numeric methods.\
+the regions(anchors) representing the lanes, so we can draw spline between the anchors, with using spline interpolations or similar numeric methods.\
 * I think that this model will solve the shortcomings mentioned before, potential improvement is that we can train the model
   with data generated from different conditions with different type of noise,\
   so our system can be more robust and if properly trained, it can adapt to all drastic changes that can happen.
+
+
+
+Example videos : 
