@@ -1,6 +1,6 @@
 # **Finding Lane Lines on the Road** 
 
-## Writeup Template
+## By Kiril Cvetkov
 
 
 ---
@@ -50,17 +50,12 @@ The goals / steps of this project are the following:
     * We plot the line on our current mask
 - We merge the mask together with our picture
 
-You can see the image below, describing more detailed activity flow diagram of my current pipeline.
+You can see the image below, describing how the pipeline works, containing activity flow diagram
+
+![Pipeline flow][image2]
 
 
-In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
-
-If you'd like to include images to show how the pipeline works, here is how to include an image: 
-
-![Flow describing our the pipeline][image2]
-
-
-### 2. Identify potential shortcomings with your current pipeline
+### 2. Potential shortcomings with your current pipeline
 
 Potential shortcomings :
 This pipeline is not robust to the following conditions :
@@ -69,7 +64,7 @@ This pipeline is not robust to the following conditions :
 * Drastic changes in the lanes direction, if we are driving around twisty roads, this system won't be capable to detect the lines, since we are using averages from the past frames,
   and also the drastic changes will be considered as an outliers(noise)
 
-### 3. Suggest possible improvements to your pipeline
+### 3. Possible improvements to your pipeline
 
 * A possible improvement would using of non-linear models that can learn how one lane is represented in the road, considering not only the edges, but many features as well.
 I think that Neural networks, especially Convolutional Neural Networks can be trained to get all the regions(anchors) representing the lanes, so we can 
