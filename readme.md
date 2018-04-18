@@ -38,7 +38,7 @@ The goals / steps of this project are the following:
 	    which means their slope and intercept differs a far away from the mean.\
         Below is the proposed formula for calculating the outliers.
     * Adding the new lines inside the frame buffer
-        Once we cleaned the noise lines from the candidate lines, we should see how much they fit\
+        Once we cleaned the noise lines from the candidate lines, we should see how much they fit
 	    with all the previous lines which were inserted in the past,\ inside the buffer.\
         If the candidate line differs a lot from the lines in the buffer, we should\
         exclude the candidate, otherwise we should include them in the buffer.\
@@ -66,11 +66,10 @@ This pipeline is not robust to the following conditions :
 
 ### 3. Possible improvements to your pipeline
 
-* A possible improvement would using of non-linear models that can learn how one lane is represented in the road, considering\
- not only the edges, but many features as well.\
+* A possible improvement would using of non-linear models that can learn how one lane is represented in the road, considering not only the edges, but many features as well.\
 I think that Neural networks, especially Convolutional Neural Networks can be trained to get all\
 the regions(anchors) representing the lanes, so we can\
 draw spline between the anchors, with using spline interpolations or similar numeric methods.\
-* I think that this model will solve the shortcomings mentioned before, potential improvement is that we can train the model\
- with data generated from different conditions with different type of noise,\
-so our system can be more robust and if properly trained, it can adapt to all drastic changes that can happen.
+* I think that this model will solve the shortcomings mentioned before, potential improvement is that we can train the model
+  with data generated from different conditions with different type of noise,\
+  so our system can be more robust and if properly trained, it can adapt to all drastic changes that can happen.
