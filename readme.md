@@ -85,11 +85,11 @@ This pipeline is not robust to the following conditions :
   
 ### 3. Possible improvements to your pipeline
 
-* We can obtain some slight improvements if we use Linear regression or Nearest Neighbour heuristic, and detecting the point that(line) has the most neighbours, but it won't solve the problems above.
+* We can obtain some slight improvements if we use Linear regression or for example Nearest Neighbour heuristic can help to find the hough point that has the most neighbours, so we can draw that point instead of calculating average, but it won't solve the main problems above.
 * A possible solution would be the using of non-linear models that can learn how one lane is represented in the road, considering not only the edges, but many features as well.\
 I think that Neural networks, especially Convolutional Neural Networks can be trained to get all
-the regions(anchors) representing the lanes, so we can draw spline between the anchors, with using spline interpolations or similar numeric methods.
-* I think that this model will solve the shortcomings mentioned before, potential improvement is that we can train the model
+the regions(anchors) representing the lanes, so we draw curve among the anchors, with using spline interpolations or similar numeric methods.
+* I think that this model will solve the shortcomings mentioned before, the best power is that we can train the model
   with data generated from different conditions with different type of noise,\
   so our system can be more robust and if properly trained, it can adapt to all drastic changes that can happen.
 
