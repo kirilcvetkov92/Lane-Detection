@@ -82,11 +82,12 @@ This pipeline is not robust to the following conditions :
 * Drastic changes in the lanes direction, if we are driving around twisty roads, this system won't be capable\
   to detect the lines, since we are using averages from the past frames,and also the drastic changes will be considered\
   as an outliers(noise)
-
+  
 ### 3. Possible improvements to your pipeline
 
-* A possible improvement would using of non-linear models that can learn how one lane is represented in the road, considering not only the edges, but many features as well.\
-I think that Neural networks, especially Convolutional Neural Networks can be trained to get all\
+* We can obtain some slight improvements if we use Linear regression or Nearest Neighbour heuristic, and detecting the point that(line) has the most neighbours, but it won't solve the problems above.
+* A possible solution would be the using of non-linear models that can learn how one lane is represented in the road, considering not only the edges, but many features as well.\
+I think that Neural networks, especially Convolutional Neural Networks can be trained to get all
 the regions(anchors) representing the lanes, so we can draw spline between the anchors, with using spline interpolations or similar numeric methods.
 * I think that this model will solve the shortcomings mentioned before, potential improvement is that we can train the model
   with data generated from different conditions with different type of noise,\
@@ -94,4 +95,4 @@ the regions(anchors) representing the lanes, so we can draw spline between the a
 
 
 
-Example videos : 
+
