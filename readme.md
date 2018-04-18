@@ -8,9 +8,8 @@
 **Finding Lane Lines on the Road**
 
 The goals / steps of this project are the following:
-* Make a pipeline that finds lane lines on the road
-* Reflect on your work in a written report
-
+* Building a pipeline that finds lane lines on the road
+* Try the pipeline on real videos
 
 [//]: # (Image References)
 
@@ -57,7 +56,6 @@ You can see the image below, describing how the pipeline works, containing activ
 
 ### 2. Potential shortcomings with your current pipeline
 
-Potential shortcomings :
 This pipeline is not robust to the following conditions :
 
 * If there is huge amount of noise in the region of interest (edges which are not produced from the lanes), the algorithm cannot decide which one represent the lines
