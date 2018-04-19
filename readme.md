@@ -9,7 +9,12 @@
 
 The goals / steps of this project are the following:
 * Building a pipeline that finds lane lines on the road
-* Try the pipeline on real videos
+* Trying the pipeline on real videos
+
+**Youtube video**
+
+[![Link](https://img.youtube.com/vi/n7wvolM8rtw/0.jpg)](https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
+
 
 [//]: # (Image References)
 
