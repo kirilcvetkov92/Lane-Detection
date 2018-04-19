@@ -62,6 +62,7 @@ The goals / steps of this project are the following:
 	
 	
     * Adding the new lines inside the frame buffer
+    
         Once we cleaned the noise lines from the candidate lines, we should see how much they fit
 	    with all the previous lines which were inserted in the past,\ inside the buffer.\
         If the candidate line differs a lot from the lines in the buffer, we should\
