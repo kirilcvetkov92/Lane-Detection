@@ -13,7 +13,7 @@ The goals / steps of this project are the following:
 
 **Youtube video**
 
-[![Link](https://img.youtube.com/vi/n7wvolM8rtw/0.jpg)](https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
+[![Link](https://img.youtube.com/vi/n7wvolM8rtw/0.jpg)](https://www.youtube.com/watch?v=n7wvolM8rtw)
 
 
 [//]: # (Image References)
