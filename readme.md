@@ -79,7 +79,7 @@ You can see the image below, describing how the pipeline works, containing activ
 ![Pipeline flow][flow]
 
 
-### 2. Potential shortcomings with your current pipeline
+### 2. Potential shortcomings with my current pipeline
 
 This pipeline is not robust to the following conditions :
 
@@ -89,7 +89,7 @@ This pipeline is not robust to the following conditions :
   to detect the lines, since we are using averages from the past frames,and also the drastic changes will be considered\
   as an outliers(noise)
   
-### 3. Possible improvements to your pipeline
+### 3. Possible improvements to my pipeline
 
 * We can obtain some slight improvements if we use Linear regression or for example Nearest Neighbour heuristic can help to find the hough point that has the most neighbours, so we can draw that point instead of calculating average, but it won't solve the main problems above.
 * A possible solution would be the using of non-linear models that can learn how one lane is represented in the road, considering not only the edges, but many features as well.\
